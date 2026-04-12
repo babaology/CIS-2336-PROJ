@@ -1,0 +1,137 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Room — UH Sugar Land Student Center</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">UH Sugar Land Student Center</a>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="booking.html" class="active">Book a Room</a></li>
+      </ul>
+      <button id="hamburger-btn">☰</button>
+    </div>
+    <div id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="booking.html">Book a Room</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Book a Room</h1>
+
+    <div id="room-cards">
+
+      <div class="room-card" data-room-id="collab-a" data-room-name="Collaboration Room A">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&auto=format&fit=crop" alt="Collaboration Room A" />
+        <h3>Collaboration Room A</h3>
+        <p>Capacity: 8 people</p>
+        <button class="select-room-btn">Select</button>
+      </div>
+
+      <div class="room-card" data-room-id="collab-b" data-room-name="Collaboration Room B">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&auto=format&fit=crop" alt="Collaboration Room B" />
+        <h3>Collaboration Room B</h3>
+        <p>Capacity: 8 people</p>
+        <button class="select-room-btn">Select</button>
+      </div>
+
+      <div class="room-card" data-room-id="study-room-1" data-room-name="Quiet Study Room 1">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&auto=format&fit=crop" alt="Quiet Study Room 1" />
+        <h3>Quiet Study Room 1</h3>
+        <p>Capacity: 4 people</p>
+        <button class="select-room-btn">Select</button>
+      </div>
+
+      <div class="room-card" data-room-id="study-room-2" data-room-name="Quiet Study Room 2">
+        <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=400&auto=format&fit=crop" alt="Quiet Study Room 2" />
+        <h3>Quiet Study Room 2</h3>
+        <p>Capacity: 4 people</p>
+        <button class="select-room-btn">Select</button>
+      </div>
+
+      <div class="room-card" data-room-id="event-space" data-room-name="Event Space">
+        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&auto=format&fit=crop" alt="Event Space" />
+        <h3>Event Space</h3>
+        <p>Capacity: 20 people</p>
+        <button class="select-room-btn">Select</button>
+      </div>
+
+    </div>
+
+    <div id="booking-form-wrap" style="display:none;">
+      <h2 id="selected-room-title"></h2>
+      <form id="booking-form">
+        <input type="hidden" id="room-id" name="roomId" />
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+        <span class="field-error" id="err-firstName">First name is required.</span>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" />
+        <span class="field-error" id="err-lastName">Last name is required.</span>
+
+        <label for="email">UH Email</label>
+        <input type="email" id="email" name="email" />
+        <span class="field-error" id="err-email">Enter a valid @uh.edu or @cougarnet.uh.edu email.</span>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" />
+        <span class="field-error" id="err-date">Please select a valid date (today up to 14 days out).</span>
+
+        <label for="time">Time</label>
+        <select id="time" name="time">
+          <option value="">-- Select --</option>
+          <option value="08:00">8:00 AM</option>
+          <option value="09:00">9:00 AM</option>
+          <option value="10:00">10:00 AM</option>
+          <option value="11:00">11:00 AM</option>
+          <option value="12:00">12:00 PM</option>
+          <option value="13:00">1:00 PM</option>
+          <option value="14:00">2:00 PM</option>
+          <option value="15:00">3:00 PM</option>
+          <option value="16:00">4:00 PM</option>
+          <option value="17:00">5:00 PM</option>
+        </select>
+        <span class="field-error" id="err-time">Please select a time.</span>
+
+        <label for="duration">Duration</label>
+        <select id="duration" name="duration">
+          <option value="">-- Select --</option>
+          <option value="1">1 hour</option>
+          <option value="2">2 hours</option>
+          <option value="3">3 hours</option>
+        </select>
+        <span class="field-error" id="err-duration">Please select a duration.</span>
+
+        <label for="groupSize">Group Size</label>
+        <input type="number" id="groupSize" name="groupSize" min="1" max="20" />
+        <span class="field-error" id="err-groupSize">Enter a group size between 1 and 20.</span>
+
+        <button type="submit">Submit Booking</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </form>
+
+      <div id="booking-result"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 University of Houston Sugar Land Student Center</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+
+</body>
+</html>
