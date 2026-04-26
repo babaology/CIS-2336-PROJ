@@ -1,1 +1,16 @@
+{
+  "name": "uh-student-center",
+  "version": "1.0.0",
+  "description": "UH Sugar Land Student Center — CIS 2336",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Babawolemi Adamolekun",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
 
