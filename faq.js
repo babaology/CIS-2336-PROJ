@@ -1,20 +1,25 @@
-var faqItems = document.querySelectorAll('.faq-item');
 
-faqItems.forEach(function(item) {
-  var btn = item.querySelector('.faq-question');
-  var icon = item.querySelector('.faq-icon');
+document.addEventListener('DOMContentLoaded', function() {
 
-  btn.addEventListener('click', function() {
-    var isOpen = item.classList.contains('open');
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(function(other) {
-      other.classList.remove('open');
-      other.querySelector('.faq-icon').textContent = '+';
+    faqItems.forEach(function(item) {
+        const btn = item.querySelector('.faq-question');
+        const icon = item.querySelector('.faq-icon');
+
+        btn.addEventListener('click', function() {
+            const isOpen = item.classList.contains('open');
+
+            faqItems.forEach(function(other) {
+                other.classList.remove('open');
+                other.querySelector('.faq-icon').textContent = '+';
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                icon.textContent = '×';
+            }
+        });
     });
 
-    if (!isOpen) {
-      item.classList.add('open');
-      icon.textContent = '×';
-    }
-  });
 });
